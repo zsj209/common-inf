@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.hrocloud.common.dao.BaseMapper">
+
+	<sql id="sqlBuilder">
+		<foreach collection="sqlMaps" item="item" index="index">
+			${item.handle}
+			<if test="item.param != null">
+				#{item.param}
+			</if>
+		</foreach>
+	</sql>
+
+	<select id="selectMap" parameterType="com.hrocloud.common.model.BaseInfo" resultType="map">
+		<include refid="sqlBuilder" />
+	</select>
+
+	<select id="selectMapPage" resultType="map">
+        <foreach collection="info.sqlMaps" item="item" index="index">
+            ${item.handle}
+            <if test="item.param != null">
+                #{item.param}
+            </if>
+        </foreach>
+	</select>
+
+	<select id="selectSingle" parameterType="com.hrocloud.common.model.BaseInfo" resultType="object">
+		<include refid="sqlBuilder" />
+	</select>
+
+	<select id="selectOne" parameterType="com.hrocloud.common.model.BaseInfo" resultType="object">
+		<include refid="sqlBuilder" />
+	</select>
+
+	<insert id="insert" parameterType="com.hrocloud.common.model.BaseInfo">
+		<include refid="sqlBuilder" />
+	</insert>
+
+	<update id="update" parameterType="com.hrocloud.common.model.BaseInfo">
+		<include refid="sqlBuilder" />
+	</update>
+
+	<delete id="delete" parameterType="com.hrocloud.common.model.BaseInfo">
+		<include refid="sqlBuilder" />
+	</delete>
+
+</mapper>
