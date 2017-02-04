@@ -1,7 +1,5 @@
 package com.hrocloud.common.model;
 
-import com.hrocloud.common.page.PageParameter;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

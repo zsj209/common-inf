@@ -17,16 +17,16 @@ public enum DomainDefine {
     // 成员变量
     private String name;
 
-    private long index;
+    private int index;
 
     // 构造方法
-    private DomainDefine(String name, long index) {
+    private DomainDefine(String name, int index) {
         this.name = name;
         this.index = index;
     }
 
     // 普通方法
-    public static String getName(long index) {
+    public static String getName(int index) {
         for (DomainDefine c : DomainDefine.values()) {
             if (c.getIndex() == index) {
                 return c.name;
@@ -46,12 +46,12 @@ public enum DomainDefine {
     }
 
 
-    public long getIndex() {
+    public int getIndex() {
         return index;
     }
 
 
-    public void setIndex(long index) {
+    public void setIndex(int index) {
         this.index = index;
     }
 }

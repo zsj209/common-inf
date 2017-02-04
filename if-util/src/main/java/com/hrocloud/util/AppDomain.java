@@ -14,14 +14,14 @@ public enum AppDomain {
 
 	HROPC(0) {
 		@Override
-		public long getDomainId() {
+		public int getDomainId() {
 			// TODO Auto-generated method stub
 			return DomainDefine.HRO.getIndex();
 		}
 	},
 	HROMOBILE(1) {
 		@Override
-		public long getDomainId() {
+		public int getDomainId() {
 			// TODO Auto-generated method stub
 			return DomainDefine.HRO.getIndex();
 		}
@@ -32,8 +32,8 @@ public enum AppDomain {
 	 * @param appId
 	 * @return
 	 */
-	public static AppDomain appOf(long appId) {
-		switch ((int)appId) {
+	public static AppDomain appOf(int appId) {
+		switch (appId) {
 		case 0:
 			return HROPC;
 		case 1:
@@ -43,13 +43,13 @@ public enum AppDomain {
 		}
 	}
 
-	private long appId;
+	private int appId;
 
-	AppDomain(long appId) {
+	AppDomain(int appId) {
 		this.setAppId(appId);
 	}
 
-	public abstract long getDomainId();
+	public abstract int getDomainId();
 
 	/**
 	 * @return the key
@@ -59,9 +59,10 @@ public enum AppDomain {
 	}
 
 	/**
-	 * @param key the key to set
+	 *
+	 * @param appId
 	 */
-	public void setAppId(long appId) {
+	public void setAppId(int appId) {
 		this.appId = appId;
 	}
 	

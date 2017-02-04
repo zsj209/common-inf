@@ -18,6 +18,21 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
+        <dependency>
+            <groupId>com.hrocloud.apigw</groupId>
+            <artifactId>apigw-client</artifactId>
+            <version>${apigw.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hrocloud.inf</groupId>
+            <artifactId>if-util</artifactId>
+            <version>${hrocommon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hrocloud.common</groupId>
+            <artifactId>common-api</artifactId>
+            <version>${commonsvc.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
